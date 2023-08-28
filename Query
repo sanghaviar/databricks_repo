@@ -1,0 +1,11 @@
+1. Load sample CSV into Databricks and create a Data Frame and write it into bronze layer dbfs path as parquet format.  
+
+2.Load sample Json into Databricks and create a Data Frame and flatten column projects and write it into bronze layer dbfs path as parquet format.  
+
+3.Load both the data from bronze layer and Remove duplicate, small case column name, replace null with 0 value, and write it into the silver layer dbfs path as parquet. 
+
+4.Load data from silver layer and join the both data frame and store it as a delta table gold layer dbfs path. 
+
+5.Now delete the data from the table where id = “31,40,7,15” 
+
+6.Restore the table in a previous version. 
