@@ -131,10 +131,11 @@ join_dataframe.write.parquet(gold_layer)
 # COMMAND ----------
 
 joined_df = spark.read.parquet(gold_layer)
-# joined_df.createOrReplaceTempView('Joined_table')
 display(joined_df)
 
 
 # COMMAND ----------
 
-
+ids_to_delete = [31, 40, 7, 15]
+filtered_df = joined_df.filter(~joined_df["Id"].isin(ids_to_delete))
+display(filtered_df)
